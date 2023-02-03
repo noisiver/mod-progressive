@@ -39,7 +39,7 @@ void Progressive::AddVendorItems()
         uint32 incrtime = fields[3].Get<int32>();
         uint32 extendedCost = fields[4].Get<int32>();
 
-        sObjectMgr->AddVendorItem(entry, item, maxcount, incrtime, extendedCost, false);
         sObjectMgr->RemoveVendorItem(entry, item, false);
+        sObjectMgr->AddVendorItem(entry, item, maxcount, incrtime, extendedCost, false);
     } while (result->NextRow());
 }
