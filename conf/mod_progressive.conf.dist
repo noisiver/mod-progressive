@@ -1,0 +1,51 @@
+[worldserver]
+
+###
+# The currently active patch. It will always include all content up to and including that patch
+#
+# It's not recommended to go back to a previous patch without first clearing the world database and letting the auto updater populate it again
+# or to enable the last patch, let the auto updater import all changes, delete all entries from the updates table starting with patch_ and
+# then selecting the patch. A lot of the content from newer patches will still be active otherwise
+#
+# 0 - Patch 3.0: Echoes of Doom
+# 1 - Patch 3.1: Secrets of Ulduar
+# 2 - Patch 3.2: Call of the Crusade
+# 3 - Patch 3.3: Fall of the Lich King
+# 4 - Patch 3.3.5: Assault on the Ruby Sanctum
+###
+
+Progressive.Patch = 4
+
+###
+# Dual talent specialization was a feature added in patch 3.1
+#
+# Enabling this option will enable that feature before that patch
+###
+
+Progressive.DualTalent = 0
+
+###
+# Dungeon Finder was a feature added in patch 3.3
+#
+# Enabling this option will enable the dungeon finder before that patch
+###
+
+Progressive.DungeonFinder = 0
+
+###
+# Quest markers on the map was a feature added in patch 3.2
+#
+# Enabling this option will show those markers before that patch
+###
+
+Progressive.QuestPOI = 0
+
+###
+# Show the patch notes at the character selection screen
+#
+# This feature requires Warden to be enabled
+#
+# Disable this if you have your own information shown
+###
+
+Progressive.PatchNotes = 1
