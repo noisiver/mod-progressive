@@ -9,10 +9,52 @@ void Progressive::OnAfterConfigLoad(bool reload)
         return;
 
     PatchId = sConfigMgr->GetOption<int>("Progressive.Patch", ASSAULT_ON_THE_RUBY_SANCTUM);
-    DualTalent = sConfigMgr->GetOption<bool>("Progressive.DualTalent", false);
-    DungeonFinder = sConfigMgr->GetOption<bool>("Progressive.DungeonFinder", false);
-    QuestPOI = sConfigMgr->GetOption<bool>("Progressive.QuestPOI", false);
-    ShowPatchNotes = sConfigMgr->GetOption<bool>("Progressive.PatchNotes", false);
+    EnableDualTalent = sConfigMgr->GetOption<bool>("Progressive.DualTalent.Enabled", false);
+    EnableDungeonFinder = sConfigMgr->GetOption<bool>("Progressive.DungeonFinder.Enabled", false);
+    EnableQuestPOI = sConfigMgr->GetOption<bool>("Progressive.QuestPOI.Enabled", false);
+    EnabledIcecrownBuff = sConfigMgr->GetOption<int>("Progressive.IcecrownCitadel.Buff", 3);
+    EnablePatchNotes = sConfigMgr->GetOption<bool>("Progressive.PatchNotes.Enabled", false);
+
+    if (PatchId > ASSAULT_ON_THE_RUBY_SANCTUM)
+        PatchId = ASSAULT_ON_THE_RUBY_SANCTUM;
+
+    // Icecrown Citadel Buff
+    if (PatchId >= ASSAULT_ON_THE_RUBY_SANCTUM)
+    {
+        if (EnabledIcecrownBuff > 0)
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_30_A);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_30_H);
+        }
+        else
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_25_A);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_25_H);
+        }
+    }
+    else
+    {
+        if (EnabledIcecrownBuff > 2)
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_20_A);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_20_H);
+        }
+        else if (EnabledIcecrownBuff > 1)
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_15_A);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_15_H);
+        }
+        else if (EnabledIcecrownBuff > 0)
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_10_A);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_10_H);
+        }
+        else
+        {
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_HORDE, SPELL_ICECROWN_CITADEL_5_H);
+            sWorld->setIntConfig(CONFIG_ICC_BUFF_ALLIANCE, SPELL_ICECROWN_CITADEL_5_A);
+        }
+    }
 
     // Health Regen
     sWorld->setBoolConfig(CONFIG_LOW_LEVEL_REGEN_BOOST, PatchId >= FALL_OF_THE_LICH_KING);
@@ -21,13 +63,13 @@ void Progressive::OnAfterConfigLoad(bool reload)
     sWorld->setBoolConfig(CONFIG_QUEST_IGNORE_AUTO_ACCEPT, PatchId < CALL_OF_THE_CRUSADE);
 
     // Dungeon Finder
-    sWorld->setIntConfig(CONFIG_LFG_OPTIONSMASK, (PatchId < FALL_OF_THE_LICH_KING && !DungeonFinder ? 0 : 5));
+    sWorld->setIntConfig(CONFIG_LFG_OPTIONSMASK, (PatchId < FALL_OF_THE_LICH_KING && !EnableDungeonFinder ? 0 : 5));
 
     // Dual Talent Specialization
-    sWorld->setIntConfig(CONFIG_MIN_DUALSPEC_LEVEL, (PatchId < SECRETS_OF_ULDUAR && !DualTalent ? 255 : 40));
+    sWorld->setIntConfig(CONFIG_MIN_DUALSPEC_LEVEL, (PatchId < SECRETS_OF_ULDUAR && !EnableDualTalent ? 255 : 40));
 
     // Quests
-    sWorld->setBoolConfig(CONFIG_QUEST_POI_ENABLED, !(PatchId < FALL_OF_THE_LICH_KING && !QuestPOI));
+    sWorld->setBoolConfig(CONFIG_QUEST_POI_ENABLED, !(PatchId < FALL_OF_THE_LICH_KING && !EnableQuestPOI));
 
     // Tradable items
     sWorld->setBoolConfig(CONFIG_SET_BOP_ITEM_TRADEABLE, PatchId >= CALL_OF_THE_CRUSADE);
@@ -45,7 +87,7 @@ void Progressive::OnAfterConfigLoad(bool reload)
 
 void Progressive::OnStartup()
 {
-    if (PatchId < FALL_OF_THE_LICH_KING && !QuestPOI)
+    if (PatchId < FALL_OF_THE_LICH_KING && !EnableQuestPOI)
     {
         if (CreatureQuestItemMap* cqi = const_cast<CreatureQuestItemMap*>(sObjectMgr->GetCreatureQuestItemMap()))
             cqi->clear();

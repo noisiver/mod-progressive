@@ -22,7 +22,7 @@ Progressive.Patch = 4
 # Enabling this option will enable that feature before that patch
 ###
 
-Progressive.DualTalent = 0
+Progressive.DualTalent.Enabled = 0
 
 ###
 # Dungeon Finder was a feature added in patch 3.3
@@ -30,7 +30,7 @@ Progressive.DualTalent = 0
 # Enabling this option will enable the dungeon finder before that patch
 ###
 
-Progressive.DungeonFinder = 0
+Progressive.DungeonFinder.Enabled = 0
 
 ###
 # Quest markers on the map was a feature added in patch 3.2
@@ -38,7 +38,18 @@ Progressive.DungeonFinder = 0
 # Enabling this option will show those markers before that patch
 ###
 
-Progressive.QuestPOI = 0
+Progressive.QuestPOI.Enabled = 0
+
+###
+# Set the buff inside Icecrown Citadel based on the active patch
+#
+# Patch 3.3 gives 5% when set to 0, 10% when set to 1, 15% when set to 2 and 20% when set to 3
+# Patch 3.3.5 gives 25% when set to 0 and 30% when set to 1
+#
+# Set to 3 to always give the best possible buff regardless of patch
+###
+
+Progressive.IcecrownCitadel.Buff = 3
 
 ###
 # Show the patch notes at the character selection screen
@@ -48,4 +59,4 @@ Progressive.QuestPOI = 0
 # Disable this if you have your own information shown
 ###
 
-Progressive.PatchNotes = 1
+Progressive.PatchNotes.Enabled = 1

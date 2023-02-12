@@ -8,7 +8,7 @@ void Progressive::OnLogin(Player* player)
 {
     ChatHandler(player->GetSession()).SendSysMessage(PatchTitle[PatchId]);
 
-    if (PatchId < FALL_OF_THE_LICH_KING && !DungeonFinder)
+    if (PatchId < FALL_OF_THE_LICH_KING && !EnableDungeonFinder)
         ChatHandler(player->GetSession()).SendSysMessage("Note: The Dungeon Finder is not available in this patch.");
 }
 

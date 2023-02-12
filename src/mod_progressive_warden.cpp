@@ -19,7 +19,7 @@ bool Progressive::CanPacketSend(WorldSession* session, WorldPacket& packet)
     if (!payloadMgr)
         return true;
 
-    if (ShowPatchNotes)
+    if (EnablePatchNotes)
     {
         if (packet.GetOpcode() == SMSG_CHAR_ENUM)
         {
@@ -32,7 +32,7 @@ bool Progressive::CanPacketSend(WorldSession* session, WorldPacket& packet)
     if (packet.GetOpcode() == SMSG_LOGIN_VERIFY_WORLD)
     {
         std::string payload = Acore::StringFormatFmt("SetCVar(\"showQuestTrackingTooltips\", 1);");
-        if (PatchId < FALL_OF_THE_LICH_KING && !QuestPOI)
+        if (PatchId < FALL_OF_THE_LICH_KING && !EnableQuestPOI)
             payload = Acore::StringFormatFmt("SetCVar(\"showQuestTrackingTooltips\", 0);");
         payloadMgr->ClearQueuedPayloads();
         SendChunkedPayload(warden, payload, 128);
