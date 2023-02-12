@@ -32,7 +32,7 @@ Yet these heroes have yet to face the greatest challenge of all: the Crusaders' 
 - Removed the questline to obtain Quel'Serrar
 
 # Raids
-- Koralon the Flame Watcher
+- Added Koralon the Flame Watcher
 - Added Trial of the Crusader
 - Added Onyxia's Lair
 
@@ -43,7 +43,7 @@ Yet these heroes have yet to face the greatest challenge of all: the Crusaders' 
 - The level requirement for journeyman riding has been reduced from 60 to 40
 - The cost of expert riding has been reduced from 800 to 250 gold
 - The level requirement of expert riding has been reduced from 70 to 60
-- Added Tome of Cold Weather Flying
+- Added Tome of Cold Weather Flight
 
 # Spells
 - Added Call of the Elements, Ancestors and Spirits

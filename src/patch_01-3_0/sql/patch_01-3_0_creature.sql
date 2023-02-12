@@ -67,4 +67,4 @@ UPDATE `creature` SET `phaseMask`=16384 WHERE `id1` IN (
     39717 -- Shooting Mechano-Tank
 );
 
-UPDATE `creature` SET `id1`=5624, `equipment_id`=0 WHERE `id1`=36213; -- Undercity Guardian -> Kor'kron Overseer
+UPDATE `creature` SET `id1`=5624, `equipment_id`=0 WHERE `id1`=36213; -- Kor'kron Overseer -> Undercity Guardian

@@ -19,7 +19,7 @@ void Progressive::OnAfterConfigLoad(bool reload)
         PatchId = ASSAULT_ON_THE_RUBY_SANCTUM;
 
     // Icecrown Citadel Buff
-    if (PatchId >= ASSAULT_ON_THE_RUBY_SANCTUM)
+    if (PatchId == ASSAULT_ON_THE_RUBY_SANCTUM)
     {
         if (EnabledIcecrownBuff > 0)
         {

@@ -1,4 +1,3 @@
--- Apprentice Riding
 UPDATE `item_template` SET `BuyPrice`=100000, `SellPrice`=0, `ItemLevel`=30, `RequiredLevel`=30 WHERE `entry` IN (
     1132, -- Horn of the Timber Wolf
     2411, -- Black Stallion Bridle
@@ -47,7 +46,6 @@ UPDATE `item_template` SET `BuyPrice`=1000000, `SellPrice`=0, `ItemLevel`=60, `R
 );
 UPDATE `item_template` SET `BuyPrice`=100000, `SellPrice`=0, `ItemLevel`=30, `RequiredLevel`=30 WHERE `entry`=33976; -- Brewfest Ram
 
--- Journeyman Riding
 UPDATE `item_template` SET `BuyPrice`=1000000, `SellPrice`=0, `ItemLevel`=60, `RequiredLevel`=60 WHERE `entry` IN (
     13334, -- Green Skeletal Warhorse
     18766, -- Reins of the Swift Frostsaber
@@ -135,7 +133,6 @@ UPDATE `item_template` SET `ItemLevel`=60, `RequiredLevel`=60 WHERE `entry` IN (
     44235 -- Reins of the Traveler's Tundra Mammoth
 );
 
--- Expert Riding
 UPDATE `item_template` SET `BuyPrice`=1000000, `SellPrice`=0, `ItemLevel`=70, `RequiredLevel`=70 WHERE `entry` IN (
     25470, -- Golden Gryphon
     25471, -- Ebon Gryphon
@@ -147,7 +144,6 @@ UPDATE `item_template` SET `BuyPrice`=1000000, `SellPrice`=0, `ItemLevel`=70, `R
 
 UPDATE `item_template` SET `ItemLevel`=70, `RequiredLevel`=70 WHERE `entry`=40775; -- Winged Steed of the Ebon Blade
 
--- Artisan Riding
 UPDATE `item_template` SET `BuyPrice`=2000000, `SellPrice`=0 WHERE `entry` IN (
     25473, -- Swift Blue Gryphon
     25477, -- Swift Red Wind Rider
