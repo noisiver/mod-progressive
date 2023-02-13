@@ -24,6 +24,7 @@ UPDATE `creature` SET `phaseMask`=1 WHERE `id1` IN (
     35365, -- Behsten <Experience Eliminator>
     35494, -- Emblem of Triumph Quartermaster
     35495, -- Emblem of Triumph Quartermaster
+    35587, -- Argent Peacekeeper
     35594, -- Brassbolt Mechawrench <Steam-Powered Auctioneer>
     35607, -- Reginald Arcfire <Steam-Powered Auctioneer>
     36479, -- Archmage Mordent Evenshade <The Highborne>

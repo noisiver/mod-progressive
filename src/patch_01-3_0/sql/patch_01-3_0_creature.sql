@@ -16,6 +16,7 @@ UPDATE `creature` SET `phaseMask`=16384 WHERE `id1` IN (
     33964, -- Emblem of Conquest Quartermaster
     33993, -- Emalon the Storm Watcher
     34015, -- Tempest Warder
+    34244, -- Jean Pierre Poulain <Argent Tournament Valiant>
     34765, -- Zelli Hotnozzle <Thunder Bluff Zeppelin Master>
     34955, -- Karg Skullgore <Battlemaster>
     34976, -- Ruk Warstomper <Battlemaster>
@@ -41,6 +42,7 @@ UPDATE `creature` SET `phaseMask`=16384 WHERE `id1` IN (
     35365, -- Behsten <Experience Eliminator>
     35494, -- Emblem of Triumph Quartermaster
     35495, -- Emblem of Triumph Quartermaster
+    35587, -- Argent Peacekeeper
     35594, -- Brassbolt Mechawrench <Steam-Powered Auctioneer>
     35607, -- Reginald Arcfire <Steam-Powered Auctioneer>
     36217, -- Overseer Kraggosh
