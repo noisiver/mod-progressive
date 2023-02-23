@@ -22,6 +22,12 @@ DELETE FROM npc_trainer WHERE ID=200010 AND SpellID IN (
     23161 -- Dreadsteed
 );
 
+DELETE FROM `npc_trainer` WHERE `ID`=200018 AND `SpellID` IN (
+    66842, -- Call of the Elements
+    66843, -- Call of the Ancestors
+    66844 -- Call of the Spirits
+);
+
 DELETE FROM `npc_trainer` WHERE `ID`=202007 AND `SpellID`=10847; -- Artisan First Aid
 
 DELETE FROM `npc_trainer` WHERE `ID`=202001 AND `SpellID` IN (
