@@ -62,6 +62,7 @@ public:
     // PlayerScript
     void OnLogin(Player* /*player*/) override;
     void OnUpdateArea(Player* /*player*/, uint32 /*oldArea*/, uint32 /*newArea*/) override;
+    bool OnUpdateFishingSkill(Player* /*player*/, int32 /*skill*/, int32 /*zone_skill*/, int32 /*chance*/, int32 /*roll*/) override;
 
     // ServerScript
     bool CanPacketSend(WorldSession* /*session*/, WorldPacket& /*packet*/) override;

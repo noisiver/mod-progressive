@@ -26,3 +26,12 @@ void Progressive::OnUpdateArea(Player* player, uint32 /*oldArea*/, uint32 newAre
         }
     }
 }
+
+bool Progressive::OnUpdateFishingSkill(Player* /*player*/, int32 /*skill*/, int32 /*zone_skill*/, int32 chance, int32 roll)
+{
+    if (PatchId < SECRETS_OF_ULDUAR)
+        if (chance < roll)
+            return false;
+
+    return true;
+}
